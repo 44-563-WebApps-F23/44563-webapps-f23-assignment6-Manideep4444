@@ -61,6 +61,41 @@ function tips (){
     out.style.color="#ff0000"
 }
 </script>
+<hr>
+<h6 class="display-6">Radio buttons that switches between calculations</h6>
+<form>
+    <input type="radio" id="sum" name="ArthOP" value="sum" onclick="chooseOp()">
+    <label for="sum">Sum</label></br>
+  
+    <input type="radio" id="diff" name="ArthOP" value="difference" onclick="chooseOp()">
+    <label for="diff">diff</label></br>
+  
+    <input type="radio" id="mult" name="ArthOP" value="product" onclick="chooseOp()">
+    <label for="mult">mult</label></br>
 
+    <!--<input type="button" onclick="resolveRadio()" value="Get values from radio group">-->
+</form>
+<br>
+<p id="arthimeticop">basic operations result is shown here</p>
+<script>
+    function chooseOp ()
+    {
+        console.log("Getting form values")
+        baseValue = parseFloat(document.getElementById("base").value)
+        tipValue = parseFloat(document.getElementById("tip_percent").value)
+        answer = document.getElementById("arthimeticop")
+        if(document.getElementById("sum").checked){
+          answer.innerHTML="Sum of "+baseValue+" and"+tipValue+" is "+(baseValue+tipValue)
+        }
+        else if(document.getElementById("diff").checked){
+          answer.innerHTML="diff of "+baseValue+" and"+tipValue+" is "+(baseValue-tipValue)
+        }
+      
+        else if(document.getElementById("mult").checked){
+            answer.innerHTML="product of "+baseValue+" and"+tipValue+" is "+(baseValue*tipValue)
+        }
+        answer.style.color="#ff0000"
+    }
+</script>
 </body>
 </html> 
