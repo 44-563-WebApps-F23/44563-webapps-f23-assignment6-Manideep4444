@@ -38,8 +38,10 @@
     </div>
     <input class="btn btn-primary mb-3" type="button" value="Check the guess" onclick="checkAuthor()">
 </form>
-    <p id="out">This text will be replaced</p>
-
+    <div>
+      <h5 class="display-5">Displaying incorrect guesses</h5>
+      <p id="out">This text will be replaced</p>
+    </div>
 
 
 <script> 
@@ -61,8 +63,18 @@ function checkAuthor(){
         oops=oops+1
         alert("Sorry")
     }
+    if(oops==7)
+    {
+      sevenIncorrectGuesses()
+      return;
+    }
     output.innerHTML="good count "+good+"  oops count "+oops
     output.style.color= "#ff0000"
+}
+
+function sevenIncorrectGuesses()
+{
+  alert("Sorry, ran out of guesses")
 }
 </script>
 <hr>
