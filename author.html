@@ -36,7 +36,7 @@
       <label for="form1_nick">Guess the author</label>
       <input type="text" id="form1_nick" name="form1_nick" autofocus>
     </div>
-    <input class="btn btn-primary mb-3" type="button" value="Check the guess" onclick="checkAuthor()">
+    <input class="btn btn-primary mb-3" type="button" value="Check the guess" onclick="checkAuthor()" id="checkButton">
 </form>
     <div>
       <h5 class="display-5">Displaying incorrect guesses</h5>
@@ -65,17 +65,15 @@ function checkAuthor(){
     }
     if(oops==7)
     {
-      sevenIncorrectGuesses()
-      return;
+      const checkButton = document.getElementById("checkButton");
+      checkButton.disabled = true;
+      alert("Sorry, ran out of guesses")
     }
     output.innerHTML="good count "+good+"  oops count "+oops
     output.style.color= "#ff0000"
 }
 
-function sevenIncorrectGuesses()
-{
-  alert("Sorry, ran out of guesses")
-}
+
 </script>
 <hr>
 <h6 class = "display-6">City Images</h1>
